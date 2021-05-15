@@ -11,7 +11,7 @@ body{
 #input{
  
     height: 40vh;
-    width: 80%;
+    width: 100%;
     
 
     margin: auto;
@@ -22,9 +22,10 @@ body{
 #ticketInput{
 
     float: left;
-    width: 50%;
+    width: 33%;
     height: 100%;
 
+    
 
 
 }
@@ -33,9 +34,8 @@ body{
 
 #controls{
     float: left;
-    width: 0%;
+    width: 33%;
     height: 100%;
-    padding-left: 10vw;
 }
 
 #header{
@@ -50,11 +50,10 @@ body{
 
 
 #output{
-    width: 50%;
-    height: 20vh;
-    margin-left: 25%;
+    float: left;
+    width: 33%;
+    height: 100%;
     background-color: #fff;
-    position: absolute;
 }
 
 .ticket{
@@ -65,12 +64,20 @@ body{
 button{
     width: 20vmin;
     height:10vmin ;
-    margin: 3em;
+    margin-top: 3em;
+    margin-bottom: 2em;
     font-size: 1em;
 }
 
 h2{
     padding-top: 1em;
+}
+
+#ticketInput input {
+    width: 20vw;
+}
+#controls input {
+    margin-bottom: 2em;
 }
 
 
