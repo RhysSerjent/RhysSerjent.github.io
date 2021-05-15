@@ -15,7 +15,7 @@ body{
     
 
     margin: auto;
-    
+    margin-top: 5vh;  
 
 }
 
@@ -38,15 +38,8 @@ body{
     height: 100%;
 }
 
-#header{
-    background-color: #AD2222;
-    height: 5vh;
-    width: 100vw;
-    margin: 0;
-    color: #e6c926;
-    position: fixed;
 
-}
+
 
 
 

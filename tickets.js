@@ -18,9 +18,9 @@ function resetValues() {
     child = document.getElementById('cT').value;
     family = 0;
 
-    adultReturnTickets = 4;
-    concessionReturnTickets = 3;
-    familyReturnTickets = 10;
+    if (adult !== Number) {
+        adult = 0;
+    }
 }
 
 function inputChanged() {
@@ -139,9 +139,9 @@ function aoc() {
 }
 
 function clear() {
-    document.getElementById('aT').value = 0;
-    document.getElementById('oT').value = 0;
-    document.getElementById('cT').value = 0;
+    document.getElementById('aT').value = null;
+    document.getElementById('oT').value = null;
+    document.getElementById('cT').value = null;
 
     const pOut = document.getElementsByTagName('p');
     for (let i = 0; i < pOut.length; i++) {
