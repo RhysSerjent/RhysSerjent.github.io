@@ -54,6 +54,7 @@ body{
     height: 20vh;
     margin-left: 25%;
     background-color: #fff;
+    position: absolute;
 }
 
 .ticket{
