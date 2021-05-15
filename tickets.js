@@ -18,7 +18,7 @@ function resetValues() {
     child = document.getElementById('cT').value;
     family = 0;
 
-    if (adult !== Number) {
+    if (adult == '') {
         adult = 0;
     }
 }
