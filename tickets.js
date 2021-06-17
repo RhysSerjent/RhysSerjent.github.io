@@ -13,7 +13,6 @@ const concessionSingle = 2;
 const familySingle = 6;
 
 function vaildCheck(handler){
-    console.log(handler.value)
     if (handler.value < 0 || handler.value == '') {
         handler.value = null;
         return 0;
