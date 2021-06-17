@@ -11,7 +11,7 @@ body{
 #input{
  
     height: 40vh;
-    width: 100%;
+    width: 100vw;
     
 
     margin: auto;
@@ -22,7 +22,7 @@ body{
 #ticketInput{
 
     float: left;
-    width: 33%;
+    width: 33vw;
     height: 100%;
 
     
@@ -34,7 +34,7 @@ body{
 
 #controls{
     float: left;
-    width: 33%;
+    width: 33vw;
     height: 100%;
 }
 
@@ -45,7 +45,7 @@ body{
 
 #output{
     float: left;
-    width: 33%;
+    width: 33vw;
     height: 100%;
     background-color: #fff;
 }

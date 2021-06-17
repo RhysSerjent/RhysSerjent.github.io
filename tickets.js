@@ -12,11 +12,32 @@ const adultSingle = 3;
 const concessionSingle = 2;
 const familySingle = 6;
 
+function vaildCheck(handler){
+    console.log(handler.value)
+    if (handler.value < 0 || handler.value == '') {
+        handler.value = null;
+        return 0;
+        
+        
+        
+    }else
+        return handler.value;
+
+}
+
 function resetValues() {
-    adult = document.getElementById('aT').value;
-    oap = document.getElementById('oT').value;
-    child = document.getElementById('cT').value;
+
+
+    adult = vaildCheck(document.getElementById('aT'));
+    oap = vaildCheck(document.getElementById('oT'));
+    child = vaildCheck( document.getElementById('cT'));
     family = 0;
+
+
+    if (adult < 0 ) {
+        adult *= -1
+        document.getElementById('aT').value = adult
+    }
 
     if (adult == '') {
         adult = 0;
