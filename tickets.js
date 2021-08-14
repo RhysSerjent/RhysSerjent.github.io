@@ -48,15 +48,30 @@ function inputChanged() {
     let ticket = null;
 
     resetValues();
-    aacc();
-    aocc();
-    accc();
-    oocc();
-    occc();
-    cccc();
-    aac();
-    acc();
-    aoc();
+
+
+
+    if (document.getElementById('rdbSingle').checked === true) {
+        ticket = 'Single';
+        familyTicketBuilder(2,2,0);
+        cost = (family * familyReturn) + (adult * adultSingle) + ((Number(child) + Number(oap)) * concessionSingle)
+
+
+    }else{
+        ticket = 'Return';
+        familyTicketBuilder(2,2,0);
+        familyTicketBuilder(1,2,1);
+        familyTicketBuilder(1,3,0);
+        familyTicketBuilder(0,2,2);
+        familyTicketBuilder(0,3,1);
+        familyTicketBuilder(0,4,0);
+        familyTicketBuilder(2,1,0);
+        familyTicketBuilder(1,2,0);
+        familyTicketBuilder()
+
+
+        cost = (family * familyReturn) + (adult * adultReturn) + ((Number(child) +Number(oap)) * concessionReturn);
+    }
 
     const outPutA = document.getElementById('outputAdult');
     const outPutC = document.getElementById('outputConcession');
@@ -64,97 +79,25 @@ function inputChanged() {
     const outPutCost = document.getElementById('outputCost')
 
 
-    if (document.getElementById('rdbSingle').checked === true) {
-        ticket = 'Single';
-        cost = (family * familySingle) + (adult * adultSingle) + ((Number(child) + Number(oap)) * concessionSingle)
-    }else{
-        ticket = 'Return';
-        cost = (family * familyReturn) + (adult * adultReturn) + ((Number(child) +Number(oap)) * concessionReturn)
 
-    }
     
-    outPutF.textContent = `Family ${ticket} X ${family}`;
+    outPutF.textContent = `Family Return X ${family}`;
     outPutA.textContent = `Adult ${ticket} X ${adult} `;
     outPutC.textContent = `Concession ${ticket} X ${Number(child) + Number(oap)}`
     outPutCost.textContent = `Total cost £${cost}`;
 
 }
 
-function aacc() {
-    while (adult >= 2  && child >= 2) {
-            adult -= 2;
-            child -= 2;
-            family += 1;
-
-    }
-}
 
 
-function aocc() {
-    while (adult >= 1 && oap >= 1 && child >= 2) {
-        adult -=1;
-        oap -= 1;
-        child -=2
-        family += 1;
-    }
-}
 
-
-function accc() {
-    while (adult >= 1 && child >= 3) {
-        adult -= 1;
-        child -=3;
-        family += 1
-    }
-}
-
-function oocc() {
-    while (oap >= 2 && child >= 2) {
-        oap -= 2;
-        child -= 2;
-        family +=1;
-    }
-}
-
-function occc() {
-    while (oap >= 1 && child >= 3) {
-        oap -= 1;
-        child -= 3;
-        family += 1;
-    }
- 
-}
-
-function cccc() {
-    while (child >= 4) {
-        child -=4;
-        family += 1;
-    }
-}
-
-function aac() {
-    while (adult >= 2 && child >= 1) {
-        adult -= 2;
-        child -= 1;
-        family +=1;
-    }
-}
-
-function acc(){
-    while (adult >=1 && child >= 2) {
-        adult -=1;
-        child -= 2;
+function familyTicketBuilder(a,c,o) {
+    while (adult >= a && child >= c && oap >= o) {
+        adult -= a;
+        child -= c;
+        oap -= o;
         family += 1;
 
-    } 
-}
-
-function aoc() {
-    while (adult >= 1 && child >= 1 && oap >= 1) {
-        adult -=1;
-        child -= 1;
-        oap -= 1;
-        family += 1;
     }
 }
 
