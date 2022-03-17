@@ -1,16 +1,17 @@
 let cost = 0;
 let adult = 0;
 let oap = 0;
-let child = 6;
+let child = 0;
 let family = 0;
 
-const adultReturn = 4;
+const adultReturn = 5;
 const concessionReturn = 3;
-const familyReturn = 10;
+const familyReturn = 12;
+const seniorReturn = 4;
 
 const adultSingle = 3;
 const concessionSingle = 2;
-const familySingle = 6;
+
 
 function vaildCheck(handler){
     if (handler.value < 0 || handler.value == '') {
@@ -53,7 +54,6 @@ function inputChanged() {
 
     if (document.getElementById('rdbSingle').checked === true) {
         ticket = 'Single';
-        familyTicketBuilder(2,2,0);
         cost = (family * familyReturn) + (adult * adultSingle) + ((Number(child) + Number(oap)) * concessionSingle)
 
 
@@ -61,20 +61,16 @@ function inputChanged() {
         ticket = 'Return';
         familyTicketBuilder(2,2,0);
         familyTicketBuilder(1,2,1);
-        familyTicketBuilder(1,3,0);
         familyTicketBuilder(0,2,2);
-        familyTicketBuilder(0,3,1);
-        familyTicketBuilder(0,4,0);
         familyTicketBuilder(2,1,0);
-        familyTicketBuilder(1,2,0);
-        familyTicketBuilder()
 
 
-        cost = (family * familyReturn) + (adult * adultReturn) + ((Number(child) +Number(oap)) * concessionReturn);
+        cost = (family * familyReturn) + (adult * adultReturn) + (oap * seniorReturn) + ((Number(child) +Number(oap)) * concessionReturn);
     }
 
     const outPutA = document.getElementById('outputAdult');
     const outPutC = document.getElementById('outputConcession');
+    const outPutS = document.getElementById('outputSenior')
     const outPutF = document.getElementById('outputFamily');
     const outPutCost = document.getElementById('outputCost')
 
@@ -83,7 +79,16 @@ function inputChanged() {
     
     outPutF.textContent = `Family Return X ${family}`;
     outPutA.textContent = `Adult ${ticket} X ${adult} `;
-    outPutC.textContent = `Concession ${ticket} X ${Number(child) + Number(oap)}`
+    if (document.getElementById('rdbSingle').checked === true){
+        outPutC.textContent = `Concession ${ticket} X ${Number(child) + Number(oap)}`
+    }else {
+        outPutC.textContent = `Concession ${ticket} X ${Number(child)}`
+        outPutS.textContent = `Senior ${ticket} X ${Number(oap)}`
+    }
+
+
+
+    // outPutC.textContent = `Concession ${ticket} X ${Number(child) + Number(oap)}`
     outPutCost.textContent = `Total cost £${cost}`;
 
 }
