@@ -74,7 +74,7 @@ function inputChanged() {
     const outPutF = document.getElementById('outputFamily');
     const outPutCost = document.getElementById('outputCost')
 
-
+    outPutS.textContent = '';
 
     
     outPutF.textContent = `Family Return X ${family}`;
