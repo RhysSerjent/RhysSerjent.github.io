@@ -82,7 +82,6 @@ function inputChanged() {
     if (document.getElementById('rdbSingle').checked === true){
         outPutC.textContent = `Concession ${ticket} X ${Number(child) + Number(oap)}`
     }else {
-        console.log ('hey')
         outPutC.textContent = `Concession ${ticket} X ${Number(child)}`
         outPutS.textContent = `Senior ${ticket} X ${Number(oap)}`
     }
