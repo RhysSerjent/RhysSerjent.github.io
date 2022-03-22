@@ -65,7 +65,7 @@ function inputChanged() {
         familyTicketBuilder(2,1,0);
 
 
-        cost = (family * familyReturn) + (adult * adultReturn) + (oap * seniorReturn) + ((Number(child) +Number(oap)) * concessionReturn);
+        cost = (family * familyReturn) + (adult * adultReturn) + (oap * seniorReturn) + (Number(child) * concessionReturn);
     }
 
     const outPutA = document.getElementById('outputAdult');
@@ -82,6 +82,7 @@ function inputChanged() {
     if (document.getElementById('rdbSingle').checked === true){
         outPutC.textContent = `Concession ${ticket} X ${Number(child) + Number(oap)}`
     }else {
+        console.log ('hey')
         outPutC.textContent = `Concession ${ticket} X ${Number(child)}`
         outPutS.textContent = `Senior ${ticket} X ${Number(oap)}`
     }
