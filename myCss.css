@@ -5,26 +5,39 @@
     margin: 0;
        
 }
-body{
-    background-color: #F6B01C;}
+body {
+    background-color: #8A2B31;
+}
 
-#input{
+h1 {
+    padding: 0.5em;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#content{
  
-    height: 100vh;
-    width: 100vw;
+    height: auto;
     position: relative;
     
 
     margin: auto;
-    margin-top: 5vh;  
+    /* margin-top: 5vh;   */
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgb(236, 229, 229);
+    padding: 2em;
 
 }
 
-#ticketInput{
-
-    float: left;
-    width: 33vw;
-    height: 80vh;
+#ticketInput {
+    display: flex;
+    flex-direction: column;
+    margin: 5vw;
+    /* background-color: blueviolet; */
+    /* min-width: 300px; */
 
     
 
@@ -34,9 +47,7 @@ body{
 
 
 #controls{
-    float: left;
-    width: 33vw;
-    height: 60vh;
+    margin: 3em;
 }
 
 
@@ -47,12 +58,13 @@ body{
 #output{
     float: left;
     width: 33vw;
-    height: 80vh;
+    height: auto;
     background-color: #fff;
+    border-style: solid;
+    padding: 1em;
 }
 
 .ticket{
-    margin: auto;
     text-align: center;
 }
 
@@ -69,7 +81,7 @@ h2{
 }
 
 #ticketInput input {
-    width: 20vw;
+    width: 100%;
 }
 #controls input {
     margin-bottom: 2em;
