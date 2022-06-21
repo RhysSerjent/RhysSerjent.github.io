@@ -22,28 +22,25 @@ h1 {
     
 
     margin: auto;
-    /* margin-top: 5vh;   */
-    /* background-color: aquamarine; */
+
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     background-color: rgb(236, 229, 229);
-    padding: 2em;
-
+    padding-top: 2em;
+    padding-bottom: 2em;
 }
 
 #ticketInput {
     display: flex;
     flex-direction: column;
-    margin: 5vw;
-    /* background-color: blueviolet; */
-    /* min-width: 300px; */
+    margin-right: 1vw;
+
 
     
 
 
 }
-
 
 
 #controls{
@@ -80,9 +77,6 @@ h2{
     padding-top: 1em;
 }
 
-#ticketInput input {
-    width: 100%;
-}
 #controls input {
     margin-bottom: 2em;
 }
