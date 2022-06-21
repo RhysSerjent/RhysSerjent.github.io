@@ -36,20 +36,12 @@ h1 {
     flex-direction: column;
     margin-right: 1vw;
 
-
-    
-
-
 }
 
 
 #controls{
-    margin: 3em;
+    margin: 2em;
 }
-
-
-
-
 
 
 #output{
@@ -66,8 +58,8 @@ h1 {
 }
 
 button{
-    width: 20vmin;
-    height:10vmin ;
+    width: 4em;
+    height:2em ;
     margin-top: 3em;
     margin-bottom: 2em;
     font-size: 1em;
@@ -80,5 +72,3 @@ h2{
 #controls input {
     margin-bottom: 2em;
 }
-
-

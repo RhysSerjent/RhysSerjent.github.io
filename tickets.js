@@ -18,8 +18,6 @@ function returnValidInput(handler) {
   if (handler.value === '') {
     handler.value = null;
     return 0;
-  } else if (handler.value < 0) {
-    handler.value *= -1;
   }
   return handler.value;
 }
@@ -41,7 +39,7 @@ function inputChanged() {
     cost = (family * familyReturn) + (adult * adultSingle) + ((Number(child) + Number(oap)) * concessionSingle);
   } else {
     ticket = 'Return';
-    // groups that are cheaper as a family ticket 
+    // groups that are cheaper as a family ticket
     familyTicketBuilder(2, 2, 0);
     familyTicketBuilder(1, 2, 1);
     familyTicketBuilder(0, 2, 2);
@@ -94,6 +92,16 @@ const inputs = document.getElementsByTagName('input');
 for (let i = 0; i < inputs.length; i++) {
   const iBox = inputs[i];
   iBox.addEventListener('input', inputChanged);
+}
+
+// prevent invalid inputs
+const inputBoxes = document.querySelectorAll('.inputBox');
+for (const box of inputBoxes) {
+  box.addEventListener('keydown', function (event) {
+    if (event.key === '.' || event.key === '-') {
+      event.preventDefault();
+    }
+  });
 }
 
 document.getElementById('clear').addEventListener('click', clear);
