@@ -19,7 +19,6 @@ const concessionSingle = 2;
 
 
 function returnValidInput(handler, oldValue) {
-  console.log(oldValue);
   if (handler.value === '') {
     handler.value = null;
     return 0;
@@ -54,8 +53,10 @@ function inputChanged() {
     // groups that are cheaper as a family ticket
     familyTicketBuilder(2, 2, 0);
     familyTicketBuilder(1, 2, 1);
+    familyTicketBuilder(1, 3, 0);
     familyTicketBuilder(0, 2, 2);
     familyTicketBuilder(2, 1, 0);
+    familyTicketBuilder(0, 3, 1);
 
 
     cost = (family * familyReturn) + (adult * adultReturn) + (oap * seniorReturn) + (Number(child) * concessionReturn);
