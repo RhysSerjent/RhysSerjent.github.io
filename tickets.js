@@ -4,6 +4,10 @@ let oap = 0;
 let child = 0;
 let family = 0;
 
+let storedAdult = 0;
+let storedOap = 0;
+let storedChild = 0;
+
 // ticket prices
 const adultReturn = 5;
 const concessionReturn = 3;
@@ -14,19 +18,27 @@ const adultSingle = 3;
 const concessionSingle = 2;
 
 
-function returnValidInput(handler) {
+function returnValidInput(handler, oldValue) {
+  console.log(oldValue);
   if (handler.value === '') {
     handler.value = null;
     return 0;
+  } else if (handler.value < 0 || handler.value.toString().includes('.')) {
+    handler.value = oldValue;
+    return oldValue;
   }
   return handler.value;
 }
 
 function updateValues() {
-  adult = returnValidInput(document.getElementById('aT'));
-  oap = returnValidInput(document.getElementById('oT'));
-  child = returnValidInput(document.getElementById('cT'));
+  adult = returnValidInput(document.getElementById('aT'), storedAdult);
+  oap = returnValidInput(document.getElementById('oT'), storedOap);
+  child = returnValidInput(document.getElementById('cT'), storedChild);
   family = 0;
+
+  storedAdult = adult;
+  storedChild = child;
+  storedOap = oap;
 }
 
 function inputChanged() {
