@@ -9,13 +9,13 @@ let storedOap = 0;
 let storedChild = 0;
 
 // ticket prices
-const adultReturn = 5;
-const concessionReturn = 3;
-const familyReturn = 12;
-const seniorReturn = 4;
+const adultReturn = 6;
+const concessionReturn = 4;
+const familyReturn = 13;
+const seniorReturn = 5;
 
-const adultSingle = 3;
-const concessionSingle = 2;
+const adultSingle = 4;
+const concessionSingle = 3;
 
 
 function returnValidInput(handler, oldValue) {
@@ -47,6 +47,9 @@ function inputChanged() {
 
   if (document.getElementById('rdbSingle').checked === true) {
     ticket = 'Single';
+    // Family return is now cheaper than a getting singles
+    familyTicketBuilder(2,2,0);
+
     cost = (family * familyReturn) + (adult * adultSingle) + ((Number(child) + Number(oap)) * concessionSingle);
   } else {
     ticket = 'Return';
@@ -57,6 +60,10 @@ function inputChanged() {
     familyTicketBuilder(0, 2, 2);
     familyTicketBuilder(2, 1, 0);
     familyTicketBuilder(0, 3, 1);
+    familyTicketBuilder(0, 4, 0);
+    familyTicketBuilder(2, 1, 0);
+    familyTicketBuilder(0, 1, 2);
+    familyTicketBuilder(1, 2, 0);
 
 
     cost = (family * familyReturn) + (adult * adultReturn) + (oap * seniorReturn) + (Number(child) * concessionReturn);
